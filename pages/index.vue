@@ -30,6 +30,17 @@ const notes = useState("notes", () => demoNotes);
 const beat = useState("beat", () => -1);
 const zoomX = useState("zoomX", () => 1);
 const zoomY = useState("zoomY", () => 1);
+
+useHead(() => ({
+  title: "Vue3 Piano Roll",
+  meta: [
+    {
+      hid: "description",
+      name: "description",
+      content: "A piano roll component for Vue3",
+    },
+  ],
+}));
 </script>
 
 <style lang="scss" scoped>
