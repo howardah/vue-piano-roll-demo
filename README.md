@@ -1,6 +1,6 @@
 # Vue Piano Roll
 
-Vue Piano Roll is a flexible and efficient piano roll component built with Vue.js and Nuxt.js. It provides a user-friendly interface for creating and modifying musical notes that can be played back in real time. This repository hosts the demo application for this component. You can interact with the Piano Roll and listen to the output using ToneJs.
+[Vue Piano Roll](https://github.com/howardah/vue-piano-roll) is a flexible and efficient piano roll component built with Vue.js and Nuxt.js. It provides a user-friendly interface for creating and modifying musical notes that can be played back in real time. This repository hosts the demo application for this component. You can interact with the Piano Roll and listen to the output using ToneJs.
 
 ![Piano Roll Demo Screenshot](./public/images/screenshot.png)
 
