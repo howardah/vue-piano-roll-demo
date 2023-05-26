@@ -20,7 +20,9 @@
       <input v-model="tempo" min="1" max="400" type="number" name="tempo" id="tempo" />
 
       <button class="btn zoom-in" @click="zoomIn">+</button>
-        <button class="btn zoom-out" @click="zoomOut">-</button>
+      <button class="btn zoom-out" @click="zoomOut">-</button>
+
+      <button class="btn clear" @click="notes = []">Clear</button>
     </div>
   </div>
 </template>
@@ -42,7 +44,7 @@ const notes = useState("notes", () => [] as PianoRollNote[]);
 const zoomX = useState("zoomX", () => 1);
 const zoomY = useState("zoomY", () => 1);
 
-const synthSelector = useState("synthSelector", () => "synth");
+const synthSelector = useState("synthSelector", () => "amSynth");
 
 const rewind = () => {
   beat.value -= 1;
@@ -122,7 +124,7 @@ const schedule = () => {
   const quarter = Tone.Time(unit).toSeconds() * 2;
 
   notes.value.forEach((note) => {
-    if(note.start < 0) return;
+    if (note.start < 0) return;
     Tone.Transport.scheduleOnce(() => {
       if (!synth) return;
       synth.triggerAttackRelease(note.note, note.length * quarter);
@@ -223,6 +225,12 @@ onMounted(() => {
       &:focus {
         @apply outline-none;
       }
+    }
+
+    .clear {
+        // @apply bg-white text-indigo-500 text-xs font-bold py-2 px-4 rounded border-4 border-indigo-500;
+        @apply bg-rose-500 text-white text-xs font-bold py-2 px-4 rounded border-4 border-rose-500;
+        @apply hover:border-rose-700 hover:bg-rose-700;
     }
   }
 }
