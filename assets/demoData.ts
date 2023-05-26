@@ -119,7 +119,7 @@ export const notes = [
     dragging: false,
   },
   {
-    id: 12,
+    id: 13,
     start: 13.5,
     length: 0.5,
     note: "A2",
@@ -128,7 +128,7 @@ export const notes = [
     dragging: false,
   },
   {
-    id: 13,
+    id: 14,
     start: 14,
     length: 2,
     note: "A2",
@@ -209,7 +209,7 @@ export const notes = [
     dragging: false,
   },
   {
-    id: 24,
+    id: 23,
     start: 13,
     length: 0.5,
     note: "G2",
@@ -218,7 +218,7 @@ export const notes = [
     dragging: false,
   },
   {
-    id: 25,
+    id: 24,
     start: 10,
     length: 1,
     note: "C3",
@@ -227,7 +227,7 @@ export const notes = [
     dragging: false,
   },
   {
-    id: 27,
+    id: 25,
     start: 14.5,
     length: 1,
     note: "C3",
@@ -236,7 +236,7 @@ export const notes = [
     dragging: false,
   },
   {
-    id: 28,
+    id: 26,
     start: 9.5,
     length: 0.5,
     note: "D3",
