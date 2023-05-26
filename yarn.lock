@@ -5082,10 +5082,10 @@ vue-devtools-stub@^0.1.0:
   resolved "https://registry.yarnpkg.com/vue-devtools-stub/-/vue-devtools-stub-0.1.0.tgz#a65b9485edecd4273cedcb8102c739b83add2c81"
   integrity sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==
 
-vue-piano-roll@^1.0.10:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/vue-piano-roll/-/vue-piano-roll-1.0.10.tgz#59b7580acc6783926d93861ef835e3aa762e6c30"
-  integrity sha512-EvEU2QDjwvHAQAqb0+KMTd0JSEhnlmRVe14s++iwwtzDWs0R8tiwh4VhdUVTsshijr9QxWOG7S88hVBjnGaDyg==
+vue-piano-roll@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/vue-piano-roll/-/vue-piano-roll-1.0.11.tgz#698905bf56dd3256f086330252a178d0151261fa"
+  integrity sha512-X82KXlnVfxRN8J82OG4dysyaZ0m6TzR10CbsYgy6VmBcz5miSxW0IfuLSbKeN+LBvss0qDIJN4olEk4tEftz/Q==
   dependencies:
     vue "^3.2.47"
 

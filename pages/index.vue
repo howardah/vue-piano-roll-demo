@@ -40,7 +40,8 @@ const zoomY = useState("zoomY", () => 1);
 .roller {
   @apply rounded overflow-hidden shadow-lg;
 
-  max-height: calc(100vh - 30rem);
+  max-height: max(calc(100vh - 30rem), 30rem);
+//   min-height: 30rem;
 }
 
 pre {
