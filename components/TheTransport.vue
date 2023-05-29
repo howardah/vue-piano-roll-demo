@@ -35,7 +35,7 @@ import stopIcon from "@iconify-icons/mdi/stop";
 import rewindIcon from "@iconify-icons/mdi/rewind";
 import fastForwardIcon from "@iconify-icons/mdi/fast-forward";
 import * as Tone from "tone";
-import { PianoRollNote } from "vue-piano-roll";
+import { NoteEvent, PianoRollNote } from "vue-piano-roll";
 
 const playing = useState("playing", () => false);
 const beat = useState("beat", () => -1);
@@ -53,11 +53,6 @@ const rewind = () => {
 const fastForward = () => {
   beat.value += 1;
 };
-
-// const stop = () => {
-//   beat.value = -1;
-//   startStop.value(false);
-// };
 
 const playPause = () => {
   startStop();
@@ -121,16 +116,6 @@ const initialize = async () => {
 
 const schedule = () => {
   Tone.Transport.cancel();
-  const quarter = Tone.Time(unit).toSeconds() * 2;
-
-  notes.value.forEach((note) => {
-    if (note.start < 0) return;
-    Tone.Transport.scheduleOnce(() => {
-      if (!synth) return;
-      synth.triggerAttackRelease(note.note, note.length * quarter);
-    }, note.start * quarter);
-  });
-
   Tone.Transport.scheduleRepeat(() => {
     beat.value += 1;
   }, unit);
@@ -141,36 +126,42 @@ const play = async () => {
   if (!initialized.value) await initialize();
   if (!synth) synth = new Tone.PolySynth(Tone.Synth).toDestination();
 
-  schedule();
-
   Tone.Transport.start();
 };
 
 const stop = () => {
-  Tone.Transport.stop();
-  Tone.Transport.cancel();
+  pause();
   beat.value = -1;
-  playing.value = false;
-  if (synth) synth.releaseAll();
 };
 
 const pause = () => {
-  Tone.Transport.pause();
+  Tone.Transport.stop();
   playing.value = false;
-
   if (synth) synth.releaseAll();
 };
 
-const startStop = (starting?: boolean) => {
+const startStop = () => {
   if (Tone.Transport.state === "started") {
-    if (starting) return;
-    starting === false ? stop() : pause();
+    pause();
     return;
   }
 
-  if (starting === false) return;
   play();
 };
+
+const onNoteEvent = (event: NoteEvent) => {
+  event.notesEnding.forEach((note) => {
+    synth?.triggerRelease(note);
+  });
+
+  event.notesStarting.forEach((note) => {
+    synth?.triggerAttack(note);
+  });
+};
+
+defineExpose({
+  onNoteEvent,
+});
 
 watch(tempo, (value) => {
   Tone.Transport.bpm.value = value;
@@ -178,6 +169,7 @@ watch(tempo, (value) => {
 
 onMounted(() => {
   Tone.Transport.bpm.value = tempo.value;
+  schedule();
 });
 </script>
 

@@ -1537,6 +1537,11 @@ color-support@^1.1.2:
   resolved "https://registry.yarnpkg.com/color-support/-/color-support-1.1.3.tgz#93834379a1cc9a0c61f82f52f0d04322251bd5a2"
   integrity sha512-qiBjkpbMLO/HL68y+lh4q0/O1MZFj2RX6X/KmMa3+gJD3z+WwI1ZzDHysvqHGS3mP6mznPckpXmw1nI9cJjyRg==
 
+color2k@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/color2k/-/color2k-2.0.2.tgz#ac2b4aea11c822a6bcb70c768b5a289f4fffcebb"
+  integrity sha512-kJhwH5nAwb34tmyuqq/lgjEKzlFXn1U99NlnB6Ws4qVaERcRUYeYP1cBw6BJ4vxaWStAUEef4WMr7WjOCnBt8w==
+
 colord@^2.9.1:
   version "2.9.3"
   resolved "https://registry.yarnpkg.com/colord/-/colord-2.9.3.tgz#4f8ce919de456f1d5c1c368c307fe20f3e59fb43"
@@ -5082,11 +5087,12 @@ vue-devtools-stub@^0.1.0:
   resolved "https://registry.yarnpkg.com/vue-devtools-stub/-/vue-devtools-stub-0.1.0.tgz#a65b9485edecd4273cedcb8102c739b83add2c81"
   integrity sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==
 
-vue-piano-roll@^1.0.11:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/vue-piano-roll/-/vue-piano-roll-1.0.11.tgz#698905bf56dd3256f086330252a178d0151261fa"
-  integrity sha512-X82KXlnVfxRN8J82OG4dysyaZ0m6TzR10CbsYgy6VmBcz5miSxW0IfuLSbKeN+LBvss0qDIJN4olEk4tEftz/Q==
+vue-piano-roll@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/vue-piano-roll/-/vue-piano-roll-1.1.0.tgz#afefe21be73d1cf1a71cf67942623a10892bc761"
+  integrity sha512-HZkXgI7WuEF2CKxf2Sz08au8OCYHlXxR0e6Dhml8WCeBbZi3GcpuC16YqvP4yeOUCmTrk6BBfbzDEFnYgUv2mQ==
   dependencies:
+    color2k "^2.0.2"
     vue "^3.2.47"
 
 vue-router@^4.2.1:

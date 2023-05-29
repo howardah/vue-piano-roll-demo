@@ -1,0 +1,10 @@
+{
+  "version": "v1",
+  "packages": {
+    "vue-piano-roll": {
+      "signature": "8c7e95f23d76d963831a7fd8ce6f8c0e",
+      "file": true,
+      "replaced": "^1.0.11"
+    }
+  }
+}

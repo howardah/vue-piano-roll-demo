@@ -1,6 +1,6 @@
 <template>
   <h1>Vue3 Piano Roll</h1>
-  <TheTransport />
+  <TheTransport ref="transport" />
   <div class="page">
     <div class="roller">
       <PianoRoll
@@ -11,6 +11,7 @@
         :zoom-x="zoomX"
         :zoom-y="zoomY"
         :length="30"
+        :on-note-event="onNoteEvent"
       />
     </div>
     <pre
@@ -21,15 +22,25 @@
 </template>
 
 <script setup lang="ts">
-import { PianoRoll } from "vue-piano-roll";
+import { NoteEvent, PianoRoll } from "vue-piano-roll";
 import "vue-piano-roll/dist/style.css";
 import { notes as demoNotes } from "~/assets/demoData";
+
+import TheTransport from "~/components/TheTransport.vue";
+
+import * as Tone from "tone";
 
 const notes = useState("notes", () => demoNotes);
 
 const beat = useState("beat", () => -1);
 const zoomX = useState("zoomX", () => 1);
 const zoomY = useState("zoomY", () => 1);
+
+const transport = ref<typeof TheTransport>();
+
+const onNoteEvent = (event: NoteEvent) => {
+  transport.value?.onNoteEvent(event);
+};
 
 useHead(() => ({
   title: "Vue3 Piano Roll",
