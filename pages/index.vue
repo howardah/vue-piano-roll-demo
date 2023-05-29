@@ -10,7 +10,7 @@
         v-model="notes"
         :zoom-x="zoomX"
         :zoom-y="zoomY"
-        :length="30"
+        :length="16"
         :on-note-event="onNoteEvent"
       />
     </div>
