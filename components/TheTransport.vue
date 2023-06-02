@@ -47,6 +47,7 @@ const zoomY = useState("zoomY", () => 1);
 const synthSelector = useState("synthSelector", () => "amSynth");
 
 const rewind = () => {
+  console.log(beat.value);
   beat.value -= 1;
 };
 
