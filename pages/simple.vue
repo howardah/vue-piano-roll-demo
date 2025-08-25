@@ -1,52 +1,51 @@
 <template>
-    <h1>Vue3 Piano Roll</h1>
-    <TheTransport ref="transport" />
-    <div class="page">
-        <div class="roller">
-            <PianoRoll
-                v-if="!stylized"
-                :current-tick="beat"
-                range-bottom="F#2"
-                range-top="D#3"
-                v-model="notes"
-                :zoom-x="zoomX"
-                :zoom-y="zoomY"
-                :length="16"
-                :on-note-event="onNoteEvent"
-            />
-            <PianoRoll
-                v-else
-                :current-tick="beat"
-                range-bottom="F#2"
-                range-top="D#3"
-                v-model="notes"
-                :zoom-x="zoomX"
-                :zoom-y="zoomY"
-                :length="16"
-                :note-height="1"
-                :on-note-event="onNoteEvent"
-                :shadow-map="shadowMap"
-                shadow-color="rgb(50 62 100 / 29%)"
-                label-incidental-color="rgba(0,0,0,0.1)"
-                label-color="teal"
-                background-color="white"
-                incidental-color="rgba(0,0,0,0.1)"
-                label-background-color="white"
-                grid-color="rgba(200,200,200,1)"
-                label-border-color="rgba(200,200,200,1)"
-                note-color="teal"
-            />
-        </div>
+    <div class="py-4">
+        <TheTransport ref="transport" size="small" />
+        <div class="page">
+            <div class="roller">
+                <PianoRoll
+                    v-if="!stylized"
+                    :current-tick="beat"
+                    range-bottom="F#2"
+                    range-top="D#3"
+                    v-model="notes"
+                    :zoom-x="zoomX"
+                    :zoom-y="zoomY"
+                    :length="16"
+                    :on-note-event="onNoteEvent"
+                />
+                <PianoRoll
+                    v-else
+                    :current-tick="beat"
+                    range-bottom="F#2"
+                    range-top="D#3"
+                    v-model="notes"
+                    :zoom-x="zoomX"
+                    :zoom-y="zoomY"
+                    :length="16"
+                    :note-height="1"
+                    :on-note-event="onNoteEvent"
+                    :shadow-map="shadowMap"
+                    shadow-color="rgb(50 62 100 / 29%)"
+                    label-incidental-color="rgba(0,0,0,0.1)"
+                    label-color="teal"
+                    background-color="white"
+                    incidental-color="rgba(0,0,0,0.1)"
+                    label-background-color="white"
+                    grid-color="rgba(200,200,200,1)"
+                    label-border-color="rgba(200,200,200,1)"
+                    note-color="teal"
+                />
+            </div>
 
-        <div class="style-note">
-            The Vue Piano Roll component styling is also highly customizable.
-            <button @click="stylizeFlip">
-                Click to {{ stylized ? "unstyle" : "style" }}
-            </button>
+            <div class="style-note">
+                The Vue Piano Roll component styling is also highly
+                customizable.
+                <button @click="stylizeFlip">
+                    Click to {{ stylized ? "unstyle" : "style" }}
+                </button>
+            </div>
         </div>
-        <pre
-            >{{ notes }}
-        </pre>
     </div>
 </template>
 

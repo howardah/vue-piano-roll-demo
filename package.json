@@ -1,22 +1,24 @@
 {
-  "name": "nuxt-app",
-  "private": true,
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "devDependencies": {
-    "@iconify-icons/mdi": "^1.2.46",
-    "@iconify/vue": "^4.1.1",
-    "@nuxtjs/tailwindcss": "^6.7.0",
-    "@types/node": "^18",
-    "nuxt": "^3.5.1",
-    "sass": "^1.62.1",
-    "tone": "^14.7.77",
-    "vue-piano-roll": "^1.2.9"
-  },
-  "dependencies": {}
+	"name": "nuxt-app",
+	"private": true,
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "nuxt dev",
+		"generate": "nuxt generate",
+		"preview": "nuxt preview",
+		"postinstall": "nuxt prepare"
+	},
+	"devDependencies": {
+		"@iconify-icons/mdi": "^1.2.46",
+		"@iconify/vue": "^4.1.1",
+		"@types/node": "^18",
+		"nuxt": "^3.18.1",
+		"sass": "^1.62.1",
+		"tone": "^15.2.11",
+		"vue-piano-roll": "^1.2.15"
+	},
+	"dependencies": {
+		"@tailwindcss/vite": "^4.1.12",
+		"tailwind": "^4.0.0"
+	}
 }
