@@ -1,6 +1,5 @@
 <template>
     <div class="py-4">
-        <TheTransport ref="transport" size="small" />
         <div class="page">
             <div class="roller">
                 <PianoRoll
@@ -46,6 +45,8 @@
                 </button>
             </div>
         </div>
+
+        <TheTransport ref="transport" size="small" />
     </div>
 </template>
 
@@ -74,7 +75,7 @@ const stylized = ref(false);
 
 const beat = useState("beat", () => -1);
 const zoomX = useState("zoomX", () => 1);
-const zoomY = useState("zoomY", () => 1);
+const zoomY = useState("zoomY", () => 0.8);
 
 const transport = ref<typeof TheTransport>();
 
@@ -125,7 +126,7 @@ pre {
 
 .style-note {
     @apply text-center text-sm text-gray-500;
-    @apply my-4;
+    @apply my-2;
 
     button {
         @apply text-indigo-500 underline;

@@ -201,7 +201,11 @@ onMounted(() => {
     @apply grid gap-2 pt-2 pb-8 px-4;
 
     &.small {
-        @apply pb-3;
+        @apply p-0;
+
+        .btn {
+            @apply py-1 cursor-pointer;
+        }
     }
 
     .top,
