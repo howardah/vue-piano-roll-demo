@@ -1,5 +1,5 @@
 <template>
-    <div class="py-2">
+    <div class="py-3">
         <div class="page">
             <div class="roller">
                 <PianoRoll
