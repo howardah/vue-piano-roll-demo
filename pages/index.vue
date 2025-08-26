@@ -16,6 +16,7 @@
             />
             <PianoRoll
                 v-else
+                class="bg-white"
                 :current-tick="beat"
                 range-bottom="F#2"
                 range-top="D#3"
