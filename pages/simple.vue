@@ -53,7 +53,7 @@
 
 <script setup lang="ts">
 import { type NoteEvent, PianoRoll, type ShadowMap } from "vue-piano-roll";
-import "vue-piano-roll/dist/style.css";
+// import "vue-piano-roll/dist/style.css";
 import { notes as demoNotes } from "~/assets/demoData";
 
 import TheTransport from "~/components/TheTransport.vue";
